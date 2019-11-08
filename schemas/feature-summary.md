@@ -1,5 +1,7 @@
 # IPLD Schemas Feature Summary
 
+## Constructs for Describing Common Data Forms
+
 IPLD Schemas present basics that are well-understood in many programming ecosystems (sum types, product types, some specific recursive types):
 
 **Typed maps**
@@ -64,6 +66,8 @@ type Foo struct { f optional Bar }
 advanced ROT13
 type EncryptedString string representation advanced ROT13
 ```
+
+## Mapped to the Data Model
 
 All of this maps over the IPLD Data Model:
 
