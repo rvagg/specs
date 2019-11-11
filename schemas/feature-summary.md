@@ -50,14 +50,19 @@ type FBB enum {
 **A simple syntax for 'maybe' data elements**
 
 ```ipldsch
-type Foo struct { f nullable Bar }
+type Foo struct {
+  f nullable Bar
+}
+
 type Bar [nullable Foo]
 ```
 
 **A clear syntax for non-required fields**
 
 ```ipldsch
-type Foo struct { f optional Bar }
+type Foo struct {
+  f optional Bar
+}
 ```
 
 **Hooks for transparently transforming data with programmatic logic**
