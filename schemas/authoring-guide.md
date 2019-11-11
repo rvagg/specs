@@ -104,7 +104,7 @@ The schema kinds have matching tokens that appear throughout IPLD Schemas. Depen
 
 ## Naming Types
 
-By convention, type names should begin with a capital letter although this requirement is not strict. Type names must only contain alphanumeric ASCII characters and underscores, and the first character should be a letter. A strict regular expression for type names would be: `[a-zA-Z][a-zA-Z0-9_]*`. A regular expression following convention would be: `[A-Z][a-zA-Z0-9_]*`.
+Type names _must_ only contain alphanumeric ASCII characters and underscores. The first character _must_ be a capital letter. Multiple connected underscores _should_ be avoided (they should be reserved for codegen purposes). A strict regular expression for type names would be: `[a-zA-Z][a-zA-Z0-9_]*`. A regular expression following convention would be: `[A-Z][a-zA-Z0-9_]*` (disregarding the multiple-underscore rule for simplicity).
 
 Camel case with an upper case first character is recommended. Underscore `_` should be used sparingly. `ThisIsRecommend`, `This_Not_So_Much`, `Thisisnotrecommended`, `neitherIsThis`.
 
