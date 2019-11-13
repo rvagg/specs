@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Inter-planetary Linked Data project">
     
     
-    <link rel="preload" href="/specs/assets/css/0.styles.e1d0aacd.css" as="style"><link rel="preload" href="/specs/assets/js/app.0a49797f.js" as="script"><link rel="preload" href="/specs/assets/js/2.1a099048.js" as="script"><link rel="preload" href="/specs/assets/js/19.793dfca8.js" as="script"><link rel="prefetch" href="/specs/assets/js/10.20d32efc.js"><link rel="prefetch" href="/specs/assets/js/11.caa89001.js"><link rel="prefetch" href="/specs/assets/js/12.d257f0be.js"><link rel="prefetch" href="/specs/assets/js/13.5d4d4dac.js"><link rel="prefetch" href="/specs/assets/js/14.1c9994f7.js"><link rel="prefetch" href="/specs/assets/js/15.3a14b740.js"><link rel="prefetch" href="/specs/assets/js/16.80268b69.js"><link rel="prefetch" href="/specs/assets/js/17.f3d4a390.js"><link rel="prefetch" href="/specs/assets/js/18.37de45dc.js"><link rel="prefetch" href="/specs/assets/js/20.21c47159.js"><link rel="prefetch" href="/specs/assets/js/3.0815f1d8.js"><link rel="prefetch" href="/specs/assets/js/4.dd356c84.js"><link rel="prefetch" href="/specs/assets/js/5.ca1edd40.js"><link rel="prefetch" href="/specs/assets/js/6.348bd51b.js"><link rel="prefetch" href="/specs/assets/js/7.ec310dab.js"><link rel="prefetch" href="/specs/assets/js/8.5326f388.js"><link rel="prefetch" href="/specs/assets/js/9.75a50e6f.js">
+    <link rel="preload" href="/specs/assets/css/0.styles.e1d0aacd.css" as="style"><link rel="preload" href="/specs/assets/js/app.c88b3f2a.js" as="script"><link rel="preload" href="/specs/assets/js/2.1a099048.js" as="script"><link rel="preload" href="/specs/assets/js/19.57b4998f.js" as="script"><link rel="prefetch" href="/specs/assets/js/10.2d46b0d0.js"><link rel="prefetch" href="/specs/assets/js/11.63108233.js"><link rel="prefetch" href="/specs/assets/js/12.d257f0be.js"><link rel="prefetch" href="/specs/assets/js/13.5d4d4dac.js"><link rel="prefetch" href="/specs/assets/js/14.1c9994f7.js"><link rel="prefetch" href="/specs/assets/js/15.3a14b740.js"><link rel="prefetch" href="/specs/assets/js/16.80268b69.js"><link rel="prefetch" href="/specs/assets/js/17.1d34b642.js"><link rel="prefetch" href="/specs/assets/js/18.37de45dc.js"><link rel="prefetch" href="/specs/assets/js/20.21c47159.js"><link rel="prefetch" href="/specs/assets/js/3.0815f1d8.js"><link rel="prefetch" href="/specs/assets/js/4.dd356c84.js"><link rel="prefetch" href="/specs/assets/js/5.ca1edd40.js"><link rel="prefetch" href="/specs/assets/js/6.348bd51b.js"><link rel="prefetch" href="/specs/assets/js/7.ec310dab.js"><link rel="prefetch" href="/specs/assets/js/8.3505c747.js"><link rel="prefetch" href="/specs/assets/js/9.75a50e6f.js">
     <link rel="stylesheet" href="/specs/assets/css/0.styles.e1d0aacd.css">
   </head>
   <body>
@@ -505,8 +505,8 @@
 <span class="token comment">##</span>
 <span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">StructField</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
 <span class="token typedef"><span class="token keyword">	type</span> <span class="token class-name">TypeTerm</span></span>
-	optional Bool <span class="token punctuation">(</span>implicit <span class="token string">&quot;false&quot;</span><span class="token punctuation">)</span>
-	nullable Bool <span class="token punctuation">(</span>implicit <span class="token string">&quot;false&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">optional</span> Bool <span class="token punctuation">(</span>implicit <span class="token string">&quot;false&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">nullable</span> Bool <span class="token punctuation">(</span>implicit <span class="token string">&quot;false&quot;</span><span class="token punctuation">)</span>
 <span class="token representation">} <span class="token builtin">representation</span></span> map
 
 <span class="token comment">## TypeTerm is a union of either TypeName or an InlineDefn. th It's used for the</span>
@@ -569,7 +569,7 @@
 <span class="token comment">## 'implicit' options.</span>
 <span class="token comment">##</span>
 <span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">StructRepresentation_Map</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	fields optional <span class="token punctuation">{</span>FieldName<span class="token punctuation">:</span>StructRepresentation_Map_FieldDetails<span class="token punctuation">}</span>
+	fields <span class="token keyword">optional</span> <span class="token punctuation">{</span>FieldName<span class="token punctuation">:</span>StructRepresentation_Map_FieldDetails<span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">## StructRepresentation_Map_FieldDetails describes additional properties of a</span>
@@ -594,8 +594,8 @@
 <span class="token comment">## it is not intended to be used for migration purposes.</span>
 <span class="token comment">##</span>
 <span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">StructRepresentation_Map_FieldDetails</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	rename optional String
-	implicit optional AnyScalar
+	rename <span class="token keyword">optional</span> String
+	implicit <span class="token keyword">optional</span> AnyScalar
 <span class="token punctuation">}</span>
 
 <span class="token comment">## StructRepresentation_Tuple describes a way to map a struct type into a list</span>
@@ -609,7 +609,7 @@
 <span class="token comment">##   fieldOrder [&quot;Foo&quot;, &quot;Bar&quot;, &quot;Baz&quot;]</span>
 <span class="token comment">##</span>
 <span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">StructRepresentation_Tuple</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	fieldOrder optional <span class="token punctuation">[</span>FieldName<span class="token punctuation">]</span>
+	fieldOrder <span class="token keyword">optional</span> <span class="token punctuation">[</span>FieldName<span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">## StructRepresentation_StringPairs describes that a struct should be encoded</span>
@@ -642,7 +642,7 @@
 <span class="token comment">##</span>
 <span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">StructRepresentation_StringJoin</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
 	join String
-	fieldOrder optional <span class="token punctuation">[</span>FieldName<span class="token punctuation">]</span>
+	fieldOrder <span class="token keyword">optional</span> <span class="token punctuation">[</span>FieldName<span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">## StructRepresentation_ListPairs describes that a struct, should be encoded as</span>
@@ -715,6 +715,6 @@
 	fromType TypeName
 <span class="token punctuation">}</span>
 </code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/specs/assets/js/app.0a49797f.js" defer></script><script src="/specs/assets/js/2.1a099048.js" defer></script><script src="/specs/assets/js/19.793dfca8.js" defer></script>
+    <script src="/specs/assets/js/app.c88b3f2a.js" defer></script><script src="/specs/assets/js/2.1a099048.js" defer></script><script src="/specs/assets/js/19.57b4998f.js" defer></script>
   </body>
 </html>

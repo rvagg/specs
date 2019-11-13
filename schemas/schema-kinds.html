@@ -7,7 +7,7 @@
     <meta name="description" content="Specifications for the Inter-planetary Linked Data project">
     
     
-    <link rel="preload" href="/specs/assets/css/0.styles.e1d0aacd.css" as="style"><link rel="preload" href="/specs/assets/js/app.0a49797f.js" as="script"><link rel="preload" href="/specs/assets/js/2.1a099048.js" as="script"><link rel="preload" href="/specs/assets/js/17.f3d4a390.js" as="script"><link rel="prefetch" href="/specs/assets/js/10.20d32efc.js"><link rel="prefetch" href="/specs/assets/js/11.caa89001.js"><link rel="prefetch" href="/specs/assets/js/12.d257f0be.js"><link rel="prefetch" href="/specs/assets/js/13.5d4d4dac.js"><link rel="prefetch" href="/specs/assets/js/14.1c9994f7.js"><link rel="prefetch" href="/specs/assets/js/15.3a14b740.js"><link rel="prefetch" href="/specs/assets/js/16.80268b69.js"><link rel="prefetch" href="/specs/assets/js/18.37de45dc.js"><link rel="prefetch" href="/specs/assets/js/19.793dfca8.js"><link rel="prefetch" href="/specs/assets/js/20.21c47159.js"><link rel="prefetch" href="/specs/assets/js/3.0815f1d8.js"><link rel="prefetch" href="/specs/assets/js/4.dd356c84.js"><link rel="prefetch" href="/specs/assets/js/5.ca1edd40.js"><link rel="prefetch" href="/specs/assets/js/6.348bd51b.js"><link rel="prefetch" href="/specs/assets/js/7.ec310dab.js"><link rel="prefetch" href="/specs/assets/js/8.5326f388.js"><link rel="prefetch" href="/specs/assets/js/9.75a50e6f.js">
+    <link rel="preload" href="/specs/assets/css/0.styles.e1d0aacd.css" as="style"><link rel="preload" href="/specs/assets/js/app.c88b3f2a.js" as="script"><link rel="preload" href="/specs/assets/js/2.1a099048.js" as="script"><link rel="preload" href="/specs/assets/js/17.1d34b642.js" as="script"><link rel="prefetch" href="/specs/assets/js/10.2d46b0d0.js"><link rel="prefetch" href="/specs/assets/js/11.63108233.js"><link rel="prefetch" href="/specs/assets/js/12.d257f0be.js"><link rel="prefetch" href="/specs/assets/js/13.5d4d4dac.js"><link rel="prefetch" href="/specs/assets/js/14.1c9994f7.js"><link rel="prefetch" href="/specs/assets/js/15.3a14b740.js"><link rel="prefetch" href="/specs/assets/js/16.80268b69.js"><link rel="prefetch" href="/specs/assets/js/18.37de45dc.js"><link rel="prefetch" href="/specs/assets/js/19.57b4998f.js"><link rel="prefetch" href="/specs/assets/js/20.21c47159.js"><link rel="prefetch" href="/specs/assets/js/3.0815f1d8.js"><link rel="prefetch" href="/specs/assets/js/4.dd356c84.js"><link rel="prefetch" href="/specs/assets/js/5.ca1edd40.js"><link rel="prefetch" href="/specs/assets/js/6.348bd51b.js"><link rel="prefetch" href="/specs/assets/js/7.ec310dab.js"><link rel="prefetch" href="/specs/assets/js/8.3505c747.js"><link rel="prefetch" href="/specs/assets/js/9.75a50e6f.js">
     <link rel="stylesheet" href="/specs/assets/css/0.styles.e1d0aacd.css">
   </head>
   <body>
@@ -105,13 +105,13 @@ expose and correctly preserve the value's presense or absence.</p> <h2 id="under
 <span class="token punctuation">}</span>
 </code></pre></div></td> <td width="20%"><code>{&quot;bar&quot;: true}</code><br> <code>{&quot;bar&quot;: false}</code><br></td> <td>2</td> <td>The cardinality of `Bool` is 2; the struct has no other members, so that's it.
 </td></tr> <tr><td><div class="language-ipldsch extra-class"><pre class="language-ipldsch"><code><span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">Foo</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	bar nullable Bool
+	bar <span class="token keyword">nullable</span> Bool
 <span class="token punctuation">}</span>
 </code></pre></div></td> <td><code>{&quot;bar&quot;: true}</code><br> <code>{&quot;bar&quot;: false}</code><br> <code>{&quot;bar&quot;: null}</code><br></td> <td>3</td> <td>2+1.  The `nullable` modifier adds one to the cardinality, since a null value is now a valid match.</td></tr> <tr><td><div class="language-ipldsch extra-class"><pre class="language-ipldsch"><code><span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">Foo</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	bar optional Bool
+	bar <span class="token keyword">optional</span> Bool
 <span class="token punctuation">}</span>
 </code></pre></div></td> <td><code>{&quot;bar&quot;: true}</code><br> <code>{&quot;bar&quot;: false}</code><br> <code>{}</code><br></td> <td>3</td> <td>2+1.  The `optional` modifier adds one to the cardinality, since a map missing the key is now a valid match.</td></tr> <tr><td><div class="language-ipldsch extra-class"><pre class="language-ipldsch"><code><span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">Foo</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
-	bar optional nullable Bool
+	bar <span class="token keyword">optional</span> <span class="token keyword">nullable</span> Bool
 <span class="token punctuation">}</span>
 </code></pre></div></td> <td><code>{&quot;bar&quot;: true}</code><br> <code>{&quot;bar&quot;: false}</code><br> <code>{&quot;bar&quot;: null}</code><br> <code>{}</code><br></td> <td><b>4</b></td> <td>2+1+1.  *Each* of the modifiers cumulatively adds one valid matching representation, and thus add one to the cardinality.</td></tr> <tr><td><div class="language-ipldsch extra-class"><pre class="language-ipldsch"><code><span class="token typedef"><span class="token keyword">type</span> <span class="token class-name">Foo</span></span> <span class="token builtin">struct</span> <span class="token punctuation">{</span>
 	bar Bool
@@ -123,6 +123,6 @@ expose and correctly preserve the value's presense or absence.</p> <h2 id="under
       <a href="/specs/schemas/links.html" class="prev">Links and IPLD Schemas</a></span> <span class="next"><a href="/specs/schemas/representations.html">Representations</a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/specs/assets/js/app.0a49797f.js" defer></script><script src="/specs/assets/js/2.1a099048.js" defer></script><script src="/specs/assets/js/17.f3d4a390.js" defer></script>
+    <script src="/specs/assets/js/app.c88b3f2a.js" defer></script><script src="/specs/assets/js/2.1a099048.js" defer></script><script src="/specs/assets/js/17.1d34b642.js" defer></script>
   </body>
 </html>
